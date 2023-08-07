@@ -14,4 +14,58 @@ const db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
   logging: false, // so we don't see all the SQL queries getting made
 });
 
+
+const School = db.define("School", {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  imageURL: {
+    type: Sequelizelize.STRING,
+  },
+  location: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: Sequelize.TEXT,
+  },
+});
+
+const Student = db.define("Student", {
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      isEmail: {
+        msg: 'Please enter a valid email address',
+      },
+    },
+  },
+  imageURL: {
+    type: Sequelize.STRING,
+  },
+  magicalAbilityScore: {
+    type: Sequelize.FLOAT,
+    allowNull: false,
+    validate: {
+      isFloat: {
+        args: [0.0, 10.0],
+        msg: 'Magical Ability Score must be between 0.0 and 10.0',
+      },
+    },
+  },
+});
 module.exports = db;
+
+Student.hasOne(School);
+School.hasMany(Student);
+
