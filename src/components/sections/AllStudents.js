@@ -4,7 +4,7 @@ import Student from "./Student";
 import { Link } from "react-router-dom";
 
 export default function AllStudents() {
-    const [Student, AllStudents] = useState([]);
+    const [allStudents, setAllStudents] = useState([]);
 
     useEffect(() => {
         async function fetchAllStudents() {
@@ -19,9 +19,9 @@ export default function AllStudents() {
         <>
         <h1>All Students</h1>
         <ul id = "main">
-            {allStudents.map((oneStudent) => (
-                <li key={Student.id}> 
-                    <Link to={`/Student/${Student.id}`}>{Student.firstName}</Link> <br />
+            {allStudents.map((student) => (
+                <li key={student.id}> 
+                    <Link to={`/Students/${student.id}`}>{student.firstName}</Link> <br />
                 </li>
             ))}
         </ul>

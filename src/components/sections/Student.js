@@ -20,10 +20,10 @@ export default function Student() {
     }
     return (
         <div>
-            <h2>{Student.firstName}</h2>
-            <p> Email: {Student.email} </p>
-            <p> GPA: {Student.gpa} </p>
-            <img src = {Student.imageURL} />
+            <h2>{student.firstName}</h2>
+            <p> Email: {student.email} </p>
+            <p> GPA: {student.gpa} </p>
+            <img src = {student.imageURL} />
         </div>
     );
 }

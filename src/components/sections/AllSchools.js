@@ -4,7 +4,7 @@ import School from "./School";
 import { Link } from "react-router-dom";
 
 export default function AllSchools() {
-    const [School, AllSchools] = useState([]);
+    const [allSchools, setAllSchools] = useState([]);
 
     useEffect(() => {
         async function fetchAllSchools() {
@@ -20,8 +20,8 @@ export default function AllSchools() {
         <h1>All Wizarding Schools</h1>
         <ul id = "main">
             {allSchools.map((oneSchool) => (
-                <li key={School.id}> 
-                    <Link to={`/School/${School.id}`}>{School.name}</Link> <br />
+                <li key={oneSchool.id}> 
+                    <Link to={`/Schools/${oneSchool.id}`}>{oneSchool.name}</Link> <br />
                 </li>
             ))}
         </ul>

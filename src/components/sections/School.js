@@ -20,10 +20,10 @@ export default function School() {
     }
     return (
         <div>
-            <h2>{School.name}</h2>
-            <p> Address: {School.address} </p>
-            <p> About: {School.description} </p>
-            <img src = {School.imageURL} />
+            <h2>{school.name}</h2>
+            <p> Address: {school.address} </p>
+            <p> About: {school.description} </p>
+            <img src = {school.imageURL} />
         </div>
     );
 }
