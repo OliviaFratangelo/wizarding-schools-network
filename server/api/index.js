@@ -4,7 +4,7 @@ const router = require("express").Router();
 // require your database and place your routes here
 const { School, Student } = require("../db");
 
-router.get("/api/School", async (req, res, next) => {
+router.get("/School", async (req, res, next) => {
     try {
         const allSchools = await School.findAll();
         res.send(allSchools);
@@ -14,7 +14,7 @@ router.get("/api/School", async (req, res, next) => {
     }
 });
 
-router.get("/api/School/:id", async (req, res, next) => {
+router.get("/School/:id", async (req, res, next) => {
     try {
         const oneSchool = await School.findByPk(req.params.id);
         res.send(oneSchool);
@@ -23,7 +23,7 @@ router.get("/api/School/:id", async (req, res, next) => {
     }
 });
 
-router.post("/api/School", async (req, res, next) => {
+router.post("/School", async (req, res, next) => {
     try {
         const newSchool = await School.create(req.body);
         res.send(newSchool);
@@ -32,7 +32,7 @@ router.post("/api/School", async (req, res, next) => {
     }
 });
 
-router.delete("/api/School/:id", async (req, res, next) => {
+router.delete("/School/:id", async (req, res, next) => {
     try { 
         const oneSchool = await School.findByPk(req.params.id);
         oneSchool.destroy();
@@ -42,7 +42,7 @@ router.delete("/api/School/:id", async (req, res, next) => {
     }
 });
 
-application.put("/api/School/:id", async (req, res, next) => {
+router.put("/School/:id", async (req, res, next) => {
     try {
         const oneSchool = await School.findByPk(req.params.id);
         oneSchool.update(req.body);
@@ -53,7 +53,7 @@ application.put("/api/School/:id", async (req, res, next) => {
     }
 });
 
-router.get("/api/Student", async (req, res, next) => {
+router.get("/Student", async (req, res, next) => {
     try {
         const allStudents = await Student.findAll();
         res.send(allStudents);
@@ -62,7 +62,7 @@ router.get("/api/Student", async (req, res, next) => {
     }
 });
 
-router.get("api/Student/:id", async (req, res, next) => {
+router.get("Student/:id", async (req, res, next) => {
     try {
         const oneStudent = await Student.findByPk(req.params.id);
         res.send(oneStudent);
@@ -72,7 +72,7 @@ router.get("api/Student/:id", async (req, res, next) => {
     }
 });
 
-router.post("/api/Student", async (req, res, next) => {
+router.post("/Student", async (req, res, next) => {
     try {
         const newStudent = await Student.crate(req.body);
         res.send(newStudent);
@@ -81,7 +81,7 @@ router.post("/api/Student", async (req, res, next) => {
     }
 });
 
-router.delete("/api/Student/:id", async (req, res, next) => {
+router.delete("/Student/:id", async (req, res, next) => {
     try { 
         const oneStudent = await Student.findByPk(req.params.id);
         oneStudent.destroy();
@@ -91,7 +91,7 @@ router.delete("/api/Student/:id", async (req, res, next) => {
     }
 });
 
-application.put("/api/Student/:id", async (req, res, next) => {
+router.put("/Student/:id", async (req, res, next) => {
     try {
         const oneStudent = await Student.findByPk(req.params.id);
         oneStudent.update(req.body);
