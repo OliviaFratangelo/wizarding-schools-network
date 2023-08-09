@@ -2,9 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useStudentContext } from "../Context/StudentContext";
 import Student from "./Student";
+import NewStudent from "../forms/NewStudentForm";
 
 export default function AllStudents() {
     const allStudents = useStudentContext();
+
+const handleAddStudent = (newStudent) => {
+    setStudents((prevStudents) => [...prevStudents, newStudent]);
+};
 
     return (
         <>
@@ -16,6 +21,8 @@ export default function AllStudents() {
                 </li>
             ))}
         </ul>
+         <h2>Add Another Student</h2>
+        <NewStudent onAddStudent={handleAddStudent}/>
         </>
     );
 }
