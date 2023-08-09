@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useStudentContext } from "../Context/StudentContext";
+import { Link } from "react-router-dom";
 
 export default function School() {
     const [school, setSchool] = useState(null);
@@ -31,7 +32,7 @@ export default function School() {
             <h2>Currently Enrolled Students</h2>
             <ul>
                 {schoolStudents.map(student => (
-                    <li key={student.id}>{student.firstName}</li>
+                    <Link to={`/Students/${student.id}`}><li key={student.id}>{student.firstName}</li></Link>
                 ))}
             </ul>
         </div>

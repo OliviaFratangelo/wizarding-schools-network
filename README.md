@@ -107,7 +107,7 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 ### _wizarding school_
 
 - [ X ] Write a component to display a list of all wizarding schools (at least their names and images)
-- [ ] Write a context to manage wizarding schools in your application state
+- [ X ] Write a context to manage wizarding schools in your application state
 - [ X ] Display the all-wizarding schools component when the url matches `/wizarding-schools`
 
 ### _student_
@@ -129,20 +129,20 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 ###### **Write a component to display a single wizarding school with the following information:**
 
 - [ X ] The wizarding school's name, image, location and description
-- [ ] A list of the names of all students in that wizarding school (or a helpful message if it doesn't have any students)
+- [ X ] A list of the names of all students in that wizarding school (or a helpful message if it doesn't have any students)
 - [ X ] Display the appropriate wizarding school's info when the url matches /wizarding-schools/:wizardingSchoolId
 - [ X ] Clicking on a wizarding school from the wizarding schools view should navigate to show that wizarding school
-- [ ] Clicking on the name of a student in the wizarding school view should navigate to show that student in the student view
+- [ X ] Clicking on the name of a student in the wizarding school view should navigate to show that student in the student view
 
 ### _single student_
 
 ###### **Write a component to display a single student with the following information:**
 
 - [ X ] The student's full name, email, image, and magicalAbilityScore
-- [ ] The name of their wizarding school (or a helpful message if they don't have one)
+- [ X ] The name of their wizarding school (or a helpful message if they don't have one)
 - [ X ] Display the appropriate student when the url matches `/students/:studentId`
 - [ X ] Clicking on a student from the students view should navigate to show that student
-- [ ] Clicking on the name of a wizarding school in the student view should navigate to show that wizarding school in the wizarding school view
+- [ X ] Clicking on the name of a wizarding school in the student view should navigate to show that wizarding school in the wizarding school view
 </details>
 
 <details>

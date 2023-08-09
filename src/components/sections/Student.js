@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useStudentContext } from "../Context/StudentContext";
 import { useSchoolContext } from "../Context/SchoolContext";
+import { Link } from "react-router-dom";
 
 export default function Student() {
     const [student, setStudent] = useState(null);
@@ -29,7 +30,7 @@ export default function Student() {
             <h2>{student.firstName}</h2>
             <p> Email: {student.email} </p>
             <p> GPA: {student.gpa} </p>
-            <p> Enrolled in {studentSchool.name}</p>
+            <p> Enrolled in <Link to={`/Wizarding-schools/${studentSchool.id}`}>{studentSchool.name}</Link></p>
             <img src = {student.imageURL} />
         </div>
     );
