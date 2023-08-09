@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useStudentContext } from "../Context/StudentContext";
 
 export default function School() {
     const [school, setSchool] = useState(null);
     const { id } = useParams();
+    const allStudents = useStudentContext();
+    const schoolStudents = allStudents.filter(student => student.SchoolId === id );
 
     useEffect(() => {
         async function fetchSchoolDetails() {
@@ -24,6 +27,12 @@ export default function School() {
             <p> Address: {school.address} </p>
             <p> About: {school.description} </p>
             <img src = {school.imageURL} />
+            <h2>Currently Enrolled Students</h2>
+            <ul>
+                {schoolStudents.map(student => (
+                    <li key={student.id}>{student.firstName}</li>
+                ))}
+            </ul>
         </div>
     );
 }
