@@ -28,27 +28,27 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a route to serve up all wizarding schools
+- [ X ] Write a route to serve up all wizarding schools
       **Write a `wizarding schools` model with the following information:**
-- [ ] name - not empty or null
-- [ ] imageUrl - with a default value
-- [ ] location - not empty or null
-- [ ] description - extremely large text
+- [ X ] name - not empty or null
+- [ X ] imageUrl - with a default value
+- [ X ] location - not empty or null
+- [ X ] description - extremely large text
 
 ### _students_
 
-- [ ] Write a route to serve up all students
+- [ X ] Write a route to serve up all students
 
 ###### **Write a `students` model with the following information:**
 
-- [ ] firstName - not empty or null
-- [ ] lastName - not empty or null
-- [ ] email - not empty or null; must be a valid email
-- [ ] imageUrl - with a default value
-- [ ] magicalAbilityScore - decimal between 0.0 and 10.0
+- [ X ] firstName - not empty or null
+- [ X ] lastName - not empty or null
+- [ X ] email - not empty or null; must be a valid email
+- [ X ] imageUrl - with a default value
+- [ X ] magicalAbilityScore - decimal between 0.0 and 10.0
 
-- [ ] Students may be associated with at most one wizarding school.
-- [ ] Likewise, wizarding schools may be associated with many students
+- [ X ] Students may be associated with at most one wizarding school.
+- [ X ] Likewise, wizarding schools may be associated with many students
 </details>
 
 <details>
@@ -56,11 +56,11 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a route to serve up a single wizarding school (based on its id), including that schools' students
+- [ X ] Write a route to serve up a single wizarding school (based on its id), including that schools' students
 
 ### _students_
 
-- [ ] Write a route to serve up a single student (based on their id), including that student's wizarding school
+- [ X ] Write a route to serve up a single student (based on their id), including that student's wizarding school
 </details>
 
 <details>
@@ -68,11 +68,11 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a route to add a new wizarding school
+- [ X ] Write a route to add a new wizarding school
 
 ### _student_
 
-- [ ] Write a route to add a new student
+- [ X ] Write a route to add a new student
 </details>
 
 <details>
@@ -80,11 +80,11 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a route to remove a wizarding school (based on its id)
+- [ X ] Write a route to remove a wizarding school (based on its id)
 
 ### _student_
 
-- [ ] Write a route to remove a student (based on their id)
+- [ X ] Write a route to remove a student (based on their id)
 </details>
 
 <details>
@@ -92,11 +92,11 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a route to update an existing wizarding school
+- [ X ] Write a route to update an existing wizarding school
 
 ### _student_
 
-- [ ] Write a route to update an existing student
+- [ X ] Write a route to update an existing student
 </details>
 
 ## FRONT END:
@@ -106,19 +106,19 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ### _wizarding school_
 
-- [ ] Write a component to display a list of all wizarding schools (at least their names and images)
+- [ X ] Write a component to display a list of all wizarding schools (at least their names and images)
 - [ ] Write a context to manage wizarding schools in your application state
-- [ ] Display the all-wizarding schools component when the url matches `/wizarding-schools`
+- [ X ] Display the all-wizarding schools component when the url matches `/wizarding-schools`
 
 ### _student_
 
-- [ ] Write a component to display a list of all students (at least their names)
+- [ X ] Write a component to display a list of all students (at least their names)
 - [ ] Write a context to manage students in your application state
-- [ ] Display the all-students component when the url matches `/students`
+- [ X ] Display the all-students component when the url matches `/students`
 
 ### _navbar_
 
-- [ ] Add a links to the navbar that can be used to navigate to the all-wizarding schools view and the all-students view
+- [ X ] Add a links to the navbar that can be used to navigate to the all-wizarding schools view and the all-students view
 </details>
 
 <details>
@@ -128,20 +128,20 @@ _Note: All seed data is provided for you in the seed.js file, EXCEPT WHAT IS REQ
 
 ###### **Write a component to display a single wizarding school with the following information:**
 
-- [ ] The wizarding school's name, image, location and description
+- [ X ] The wizarding school's name, image, location and description
 - [ ] A list of the names of all students in that wizarding school (or a helpful message if it doesn't have any students)
-- [ ] Display the appropriate wizarding school's info when the url matches /wizarding-schools/:wizardingSchoolId
-- [ ] Clicking on a wizarding school from the wizarding schools view should navigate to show that wizarding school
+- [ X ] Display the appropriate wizarding school's info when the url matches /wizarding-schools/:wizardingSchoolId
+- [ X ] Clicking on a wizarding school from the wizarding schools view should navigate to show that wizarding school
 - [ ] Clicking on the name of a student in the wizarding school view should navigate to show that student in the student view
 
 ### _single student_
 
 ###### **Write a component to display a single student with the following information:**
 
-- [ ] The student's full name, email, image, and magicalAbilityScore
+- [ X ] The student's full name, email, image, and magicalAbilityScore
 - [ ] The name of their wizarding school (or a helpful message if they don't have one)
-- [ ] Display the appropriate student when the url matches `/students/:studentId`
-- [ ] Clicking on a student from the students view should navigate to show that student
+- [ X ] Display the appropriate student when the url matches `/students/:studentId`
+- [ X ] Clicking on a student from the students view should navigate to show that student
 - [ ] Clicking on the name of a wizarding school in the student view should navigate to show that wizarding school in the wizarding school view
 </details>
 

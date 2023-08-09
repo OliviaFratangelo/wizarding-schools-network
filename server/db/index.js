@@ -54,7 +54,7 @@ const Student = db.define("Student", {
   },
 });
 
-Student.hasOne(School);
+Student.belongsTo(School);
 School.hasMany(Student);
 
 module.exports = {

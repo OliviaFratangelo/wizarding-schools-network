@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Student from "./Student";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useStudentContext } from "../Context/StudentContext";
+import Student from "./Student";
 
 export default function AllStudents() {
-    const [allStudents, setAllStudents] = useState([]);
-
-    useEffect(() => {
-        async function fetchAllStudents() {
-            const { data } = await axios.get("/api/Student");
-            setAllStudents(data);
-        }
-
-        fetchAllStudents();
-    }, []);
+    const allStudents = useStudentContext();
 
     return (
         <>
