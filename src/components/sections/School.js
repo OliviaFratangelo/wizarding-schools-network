@@ -7,7 +7,8 @@ export default function School() {
     const [school, setSchool] = useState(null);
     const { id } = useParams();
     const allStudents = useStudentContext();
-    const schoolStudents = allStudents.filter(student => student.SchoolId === id );
+    const schoolId = parseInt(id);
+    const schoolStudents = allStudents.filter(student => student.SchoolId === schoolId );
 
     useEffect(() => {
         async function fetchSchoolDetails() {

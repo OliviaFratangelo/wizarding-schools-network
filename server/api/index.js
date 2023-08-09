@@ -62,7 +62,7 @@ router.get("/Student", async (req, res, next) => {
     }
 });
 
-router.get("Student/:id", async (req, res, next) => {
+router.get("/Student/:id", async (req, res, next) => {
     try {
         const oneStudent = await Student.findByPk(req.params.id);
         res.send(oneStudent);

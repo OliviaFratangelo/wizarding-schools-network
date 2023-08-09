@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useStudentContext } from "../Context/StudentContext";
+import { useSchoolContext } from "../Context/SchoolContext";
 
 export default function Student() {
     const [student, setStudent] = useState(null);
     const { id } = useParams();
-
+    const studentId = parseInt(id);
+    const allStudents = useStudentContext();
+    const schoolContext = useSchoolContext();
+    const thisStudent = allStudents.find(student => student.id === studentId);
+    const studentSchool = schoolContext.find(school => school.id === thisStudent.SchoolId);
     useEffect(() => {
         async function fetchStudentDetails() {
             const { data } = await axios.get(`/api/Student/${id}`);
@@ -23,6 +29,7 @@ export default function Student() {
             <h2>{student.firstName}</h2>
             <p> Email: {student.email} </p>
             <p> GPA: {student.gpa} </p>
+            <p> Enrolled in {studentSchool.name}</p>
             <img src = {student.imageURL} />
         </div>
     );
