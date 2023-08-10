@@ -15,8 +15,13 @@ export function StudentProvider({ children }) {
         fetchAllStudents();
     }, []);
 
+    const contextValue = {
+        allStudents,
+        setAllStudents,
+    };
+
     return (
-        <StudentContext.Provider value = {allStudents}>
+        <StudentContext.Provider value = {contextValue}>
             {children}
         </StudentContext.Provider>
         );

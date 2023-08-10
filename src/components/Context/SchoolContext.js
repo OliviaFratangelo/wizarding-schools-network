@@ -4,7 +4,6 @@ import School from "../sections/School";
 const SchoolContext = createContext();
  
 export function SchoolProvider({ children }) {
-    
     const [allSchools, setAllSchools] = useState([]);
 
     useEffect(() => {
@@ -16,8 +15,13 @@ export function SchoolProvider({ children }) {
         fetchAllSchools();
     }, []);
 
+    const contextValue = {
+        allSchools,
+        setAllSchools,
+    };
+
     return (
-        <SchoolContext.Provider value={allSchools}>
+        <SchoolContext.Provider value={contextValue}>
             {children}
         </SchoolContext.Provider>
     );

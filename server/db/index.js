@@ -12,7 +12,7 @@ const School = db.define("School", {
   imageURL: {
     type: Sequelize.STRING,
   },
-  address: {
+  location: {
     type: Sequelize.STRING,
     allowNull: false,
   },
@@ -24,7 +24,7 @@ const School = db.define("School", {
 const Student = db.define("Student", {
   firstName: {
     type: Sequelize.STRING,
-    allowNull: false,
+   allowNull: false,
   },
   lastName: {
     type: Sequelize.STRING,
@@ -44,7 +44,6 @@ const Student = db.define("Student", {
   },
   gpa: {
     type: Sequelize.FLOAT,
-    allowNull: false,
     validate: {
       isFloat: {
         args: [0.0, 4.0],

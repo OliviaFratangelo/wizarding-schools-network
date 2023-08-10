@@ -8,7 +8,7 @@ export default function NewStudent() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
-
+    
     async function handleSubmit(event) {
         event.preventDefault();
 
@@ -19,7 +19,7 @@ export default function NewStudent() {
                 email,
             });
 
-            navigate("/");
+          navigate("/");
         } catch (err) {
             console.error(err);
         }

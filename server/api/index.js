@@ -74,9 +74,10 @@ router.get("/Student/:id", async (req, res, next) => {
 
 router.post("/Student", async (req, res, next) => {
     try {
-        const newStudent = await Student.crate(req.body);
-        res.send(newStudent);
+        const newStudent = await Student.create(req.body);
+        res.status(201).json(newStudent);
     } catch(err) {
+        console.error(err);
         next(err);
     }
 });

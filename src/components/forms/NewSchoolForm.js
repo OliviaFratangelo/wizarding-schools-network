@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NewSchool() {
-    const [schoolName, setSchoolName] = useState("");
+    const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const navigate = useNavigate();
 
@@ -13,11 +13,11 @@ export default function NewSchool() {
 
         try {
             const { data } = await axios.post("/api/School", {
-                schoolName,
+                name,
                 location,
             });
 
-            navigate("/");
+        navigate("/");
         } catch (err) {
             console.error(err);
         }
@@ -26,17 +26,17 @@ export default function NewSchool() {
     return (
         <>
         <form id="school-form" onSubmit={handleSubmit}>
-        <label htmlFor="schoolName">Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
-            name="schoolName"
-            value={schoolName}
-            onChange={(e) => setSchoolName(e.target.value)}
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             /> <br />
         <label htmlFor="location">Location:</label>
         <input
             name="location"
             value={location}
-            onChange={(e) => setlocation(e.target.value)}
+            onChange={(e) => setLocation(e.target.value)}
             />
             <button type="submit">Go</button>
             </form> 
