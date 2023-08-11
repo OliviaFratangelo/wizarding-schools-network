@@ -24,7 +24,7 @@ export default function UpdateSchool() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log(firstName, lastName, email);
+        console.log(name, location);
 
         try {
             const { data } = await axios.put(`/api/School/${id}`, {
@@ -34,7 +34,7 @@ export default function UpdateSchool() {
 
             console.log(data);
             setName(data.name);
-            setLastName(data.location);
+            setLocation(data.location);
         } catch (err) {
             console.error(err);
         }

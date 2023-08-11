@@ -2,12 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useStudentContext } from "../Context/StudentContext";
 
 export default function NewStudent() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
-    const navigate = useNavigate();
+    const { addStudent } = useStudentContext();
+    //const navigate = useNavigate();
     
     async function handleSubmit(event) {
         event.preventDefault();
@@ -18,8 +20,9 @@ export default function NewStudent() {
                 lastName,
                 email,
             });
+            addStudent(data);
 
-          navigate("/");
+         // navigate("/");
         } catch (err) {
             console.error(err);
         }

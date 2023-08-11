@@ -5,6 +5,7 @@ const StudentContext = createContext();
 
 export function StudentProvider({ children }) {
     const [allStudents, setAllStudents] = useState([]);
+    const [singleStudent, setSingleStudent] = useState(null);
 
     useEffect(() => {
         async function fetchAllStudents() {
@@ -15,9 +16,23 @@ export function StudentProvider({ children }) {
         fetchAllStudents();
     }, []);
 
+    const updateStudent = (id, updatedData) => {
+        setSingleStudent((prevSingleStudent) => ({
+          ...prevSingleStudent,
+          ...updatedData,
+        }));
+      };
+
+    const addStudent = (newStudent) => {
+        setAllStudents((prevStudents) => [...prevStudents, newStudent]);
+      };
+
     const contextValue = {
         allStudents,
         setAllStudents,
+        singleStudent, setSingleStudent,
+        addStudent,
+        updateStudent,
     };
 
     return (

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useStudentContext } from "../Context/StudentContext";
 
 export default function UpdateStudent() {
     const [student, setStudent] = useState({});
@@ -9,8 +10,9 @@ export default function UpdateStudent() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const { id } = useParams();
+    const { updateStudent } = useStudentContext();
 
-    useEffect(() => {
+   /* useEffect(() => {
         async function fetchStudent() {
             try {
                 const { data } = await axios.get(`/api/Student/${id}`);
@@ -18,10 +20,12 @@ export default function UpdateStudent() {
             } catch (err) {
               console.error(err);
             }
-        }
+        } 
 
         fetchStudent();
-        }, [id]);
+        }, [id]); */
+
+    
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -35,9 +39,10 @@ export default function UpdateStudent() {
             });
 
             console.log(data);
-            setFirstName(data.firstName);
-            setLastName(data.lastName);
-            setEmail(data.email);
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            updateStudent(id, {firstName,lastName,email})
         } catch (err) {
             console.error(err);
         }
