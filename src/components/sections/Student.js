@@ -12,8 +12,8 @@ export default function Student() {
     const studentId = parseInt(id);
     const { allStudents, singleStudent, setSingleStudent, updateStudent } = useStudentContext();
     const { allSchools } = useSchoolContext();
-    // const thisStudent = allStudents.find(student => student.id === studentId);
-    // const studentSchool = allSchools.find(school => school.id === thisStudent.SchoolId);
+    const thisStudent = allStudents.find(student => student.id === studentId);
+    const studentSchool = allSchools.find(school => school.id === thisStudent.SchoolId);
     useEffect(() => {
         async function fetchStudentDetails() {
             const { data } = await axios.get(`/api/Student/${id}`);
@@ -24,14 +24,14 @@ export default function Student() {
         fetchStudentDetails();
     }, [id]);
 
-    async function handleUpdateStudent(updatedStudentData) {
+  /*  async function handleUpdateStudent(updatedStudentData) {
         try {
             const { data } = axios.put(`/api/Student/${id}`, updatedStudentData);
             setStudent(data);
         } catch (err) {
             console.error(err);
         }
-    }
+    } */
 
     if(!singleStudent) {
         return <div>Loading...</div>;
@@ -42,11 +42,11 @@ export default function Student() {
             <h2>{singleStudent.firstName}</h2>
             <p> Email: {singleStudent.email} </p>
             <p> GPA: {singleStudent.gpa} </p>
-            {/* <p> Enrolled in <Link to={`/Wizarding-schools/${studentSchool.id}`}>{studentSchool.name}</Link></p>    */}
+            <p> Enrolled in <Link to={`/Wizarding-schools/${studentSchool.id}`}>{studentSchool.name}</Link></p>    
             <img src = {singleStudent.imageURL} />
             <div>
             <h2>Update Student</h2>
-            <UpdateStudent onUpdateStudent={handleUpdateStudent}/>
+            <UpdateStudent/>
             </div>
         </div>
     );
