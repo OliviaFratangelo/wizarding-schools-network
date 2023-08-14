@@ -36,13 +36,26 @@ export default function Student() {
     if(!singleStudent) {
         return <div>Loading...</div>;
     }
-
+    if(!studentSchool) {
+        return (
+        <div>
+            <h2>{singleStudent.firstName}</h2>
+            <p> Email: {singleStudent.email} </p>
+            <p> GPA: {singleStudent.gpa} </p>
+            <p> Not Enrolled in a School</p>
+            <div>
+            <h2>Update Student</h2>
+            <UpdateStudent/>
+            </div>
+        </div>
+        );
+    } 
     return (
         <div>
             <h2>{singleStudent.firstName}</h2>
             <p> Email: {singleStudent.email} </p>
             <p> GPA: {singleStudent.gpa} </p>
-            <p> Enrolled in <Link to={`/Wizarding-schools/${studentSchool.id}`}>{studentSchool.name}</Link></p>    
+            <p> Enrolled in <Link to={`/Wizarding-schools/${studentSchool.id}`}>{studentSchool.name}</Link></p> 
             <img src = {singleStudent.imageURL} />
             <div>
             <h2>Update Student</h2>

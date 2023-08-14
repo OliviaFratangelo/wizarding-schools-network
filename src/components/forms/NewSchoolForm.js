@@ -2,11 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSchoolContext } from "../Context/SchoolContext";
 
 export default function NewSchool() {
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
-    const navigate = useNavigate();
+    const { addSchool } = useSchoolContext();
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -16,8 +17,8 @@ export default function NewSchool() {
                 name,
                 location,
             });
+           addSchool(data);
 
-        navigate("/");
         } catch (err) {
             console.error(err);
         }

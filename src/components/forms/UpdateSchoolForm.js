@@ -2,14 +2,16 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSchoolContext } from "../Context/SchoolContext";
 
 export default function UpdateSchool() {
     const [school, setSchool] = useState({});
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const { id } = useParams();
+    const { updateSchool } = useSchoolContext();
 
-    useEffect(() => {
+   /* useEffect(() => {
         async function fetchSchool() {
             try {
                 const { data } = await axios.get(`/api/School/${id}`);
@@ -20,7 +22,7 @@ export default function UpdateSchool() {
         }
 
         fetchSchool();
-        }, [id]);
+        }, [id]); */
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -33,8 +35,9 @@ export default function UpdateSchool() {
             });
 
             console.log(data);
-            setName(data.name);
-            setLocation(data.location);
+            setName("");
+            setLocation("");
+            updateSchool(id, {name, location})
         } catch (err) {
             console.error(err);
         }

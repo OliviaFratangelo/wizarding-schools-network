@@ -5,7 +5,7 @@ const SchoolContext = createContext();
  
 export function SchoolProvider({ children }) {
     const [allSchools, setAllSchools] = useState([]);
-
+    const [singleSchool, setSingleSchool] = useState(null);
     useEffect(() => {
         async function fetchAllSchools() {
             const { data } = await axios.get("/api/School");
@@ -15,9 +15,24 @@ export function SchoolProvider({ children }) {
         fetchAllSchools();
     }, []);
 
+    const updateSchool = (id, updatedData) => {
+        setSingleSchool((prevSingleSchool) => ({
+          ...prevSingleSchool,
+          ...updatedData,
+        }));
+      };
+
+      const addSchool = (newSchool) => {
+        setAllSchools((prevSchools) => [...prevSchools, newSchool]);
+      };
+
+
     const contextValue = {
         allSchools,
         setAllSchools,
+        singleSchool, setSingleSchool,
+        addSchool,
+        updateSchool,
     };
 
     return (

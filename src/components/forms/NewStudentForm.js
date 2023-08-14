@@ -22,7 +22,6 @@ export default function NewStudent() {
             });
             addStudent(data);
 
-         // navigate("/");
         } catch (err) {
             console.error(err);
         }
